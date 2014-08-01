@@ -4,19 +4,20 @@ editor if you plan to continue editing the block that represents it in
 the Block Editor! File corruption is VERY likely to occur.
 */
 /*
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 1991-2014 Altera Corporation. All rights reserved.
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
 (including device programming or simulation files), and any 
 associated documentation or information are expressly subject 
 to the terms and conditions of the Altera Program License 
-Subscription Agreement, Altera MegaCore Function License 
-Agreement, or other applicable license agreement, including, 
-without limitation, that your use is for the sole purpose of 
-programming logic devices manufactured by Altera and sold by 
-Altera or its authorized distributors.  Please refer to the 
-applicable agreement for further details.
+Subscription Agreement, the Altera Quartus II License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (pin
@@ -104,6 +105,23 @@ applicable agreement for further details.
 	)
 	(annotation_block (location)(rect 736 144 792 200))
 )
+(pin
+	(output)
+	(rect 560 280 736 296)
+	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
+	(text "LED[4..7]" (rect 90 0 137 10)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+	(annotation_block (location)(rect 736 296 800 352))
+)
 (symbol
 	(rect 288 104 504 216)
 	(text "egg_timer" (rect 5 0 53 10)(font "Arial" ))
@@ -154,9 +172,76 @@ applicable agreement for further details.
 	(annotation_block (parameter)(rect 504 80 688 104))
 )
 (symbol
+	(rect 104 176 152 208)
+	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
+	(text "rst_noti" (rect 3 21 39 31)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
+(symbol
+	(rect 104 216 152 248)
+	(text "NOT" (rect 1 0 21 9)(font "Arial" (font_size 6)))
+	(text "start_noti" (rect 3 21 49 31)(font "Arial" ))
+	(port
+		(pt 0 16)
+		(input)
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(text "IN" (rect 2 7 13 18)(font "Courier New" (bold))(invisible))
+		(line (pt 0 16)(pt 13 16))
+	)
+	(port
+		(pt 48 16)
+		(output)
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(text "OUT" (rect 32 7 49 18)(font "Courier New" (bold))(invisible))
+		(line (pt 39 16)(pt 48 16))
+	)
+	(drawing
+		(line (pt 13 25)(pt 13 7))
+		(line (pt 13 7)(pt 31 16))
+		(line (pt 13 25)(pt 31 16))
+		(circle (rect 31 12 39 20))
+	)
+)
+(symbol
+	(rect 472 344 504 376)
+	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
+	(text "inst3" (rect 3 21 26 31)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 23 11)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
+	)
+)
+(symbol
 	(rect 64 104 200 184)
 	(text "pll" (rect 5 0 15 10)(font "Arial" ))
-	(text "inst1" (rect 8 64 31 74)(font "Arial" ))
+	(text "50_to_1_plli" (rect 8 64 65 74)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -184,10 +269,6 @@ applicable agreement for further details.
 	(pt 24 136)
 )
 (connector
-	(pt 24 192)
-	(pt 208 192)
-)
-(connector
 	(pt 208 152)
 	(pt 208 192)
 )
@@ -209,10 +290,6 @@ applicable agreement for further details.
 	(pt 232 232)
 )
 (connector
-	(pt 232 232)
-	(pt 24 232)
-)
-(connector
 	(pt 256 272)
 	(pt 24 272)
 	(bus)
@@ -225,6 +302,32 @@ applicable agreement for further details.
 (connector
 	(pt 504 136)
 	(pt 560 136)
+	(bus)
+)
+(connector
+	(pt 24 192)
+	(pt 104 192)
+)
+(connector
+	(pt 152 192)
+	(pt 208 192)
+)
+(connector
+	(pt 152 232)
+	(pt 232 232)
+)
+(connector
+	(pt 24 232)
+	(pt 104 232)
+)
+(connector
+	(pt 488 288)
+	(pt 560 288)
+	(bus)
+)
+(connector
+	(pt 488 344)
+	(pt 488 288)
 	(bus)
 )
 (text "Reset Alarm" (rect -144 168 -75 180)(font "Arial" (font_size 8)))

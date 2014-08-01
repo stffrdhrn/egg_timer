@@ -38,21 +38,21 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE22F17C6
-set_global_assignment -name TOP_LEVEL_ENTITY egg_timer_schem
+set_global_assignment -name TOP_LEVEL_ENTITY toplevel
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "19:09:22  JUNE 27, 2014"
-set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name LAST_QUARTUS_VERSION 14.0
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
 set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
-set_global_assignment -name VERILOG_FILE egg_timer.v
-set_global_assignment -name VERILOG_FILE led_driver.v
-set_global_assignment -name VERILOG_FILE controller_fsm.v
-set_global_assignment -name VERILOG_FILE alarm_fsm.v
+set_global_assignment -name VERILOG_FILE ../rtl/egg_timer.v
+set_global_assignment -name VERILOG_FILE ../rtl/led_driver.v
+set_global_assignment -name VERILOG_FILE ../rtl/controller_fsm.v
+set_global_assignment -name VERILOG_FILE ../rtl/alarm_fsm.v
 set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
 set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
-set_global_assignment -name BDF_FILE egg_timer_schem.bdf
-set_global_assignment -name QIP_FILE pll.qip
+set_global_assignment -name BDF_FILE ../rtl/toplevel.bdf
+set_global_assignment -name QIP_FILE ../rtl/pll.qip
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
 set_location_assignment PIN_J15 -to KEY[0]
 set_location_assignment PIN_E1 -to KEY[1]
@@ -65,13 +65,18 @@ set_location_assignment PIN_A15 -to LED[0]
 set_location_assignment PIN_A13 -to LED[1]
 set_location_assignment PIN_B13 -to LED[2]
 set_location_assignment PIN_A11 -to LED[3]
-set_global_assignment -name SDC_FILE egg_timer_schem.sdc
-set_global_assignment -name VERILOG_FILE alarm_fsm_test.v
-set_global_assignment -name VERILOG_FILE controller_fsm_test.v
-set_global_assignment -name COMMAND_MACRO_FILE controller_fsm_test.do
-set_global_assignment -name VERILOG_FILE led_driver_test.v
-set_global_assignment -name VERILOG_FILE egg_timer_test.v
+set_global_assignment -name SDC_FILE ../rtl/toplevel.sdc
+set_global_assignment -name VERILOG_FILE ../bench/alarm_fsm_test.v
+set_global_assignment -name VERILOG_FILE ../bench/controller_fsm_test.v
+set_global_assignment -name COMMAND_MACRO_FILE ../bench/controller_fsm_test.do
+set_global_assignment -name VERILOG_FILE ../bench/led_driver_test.v
+set_global_assignment -name VERILOG_FILE ../bench/egg_timer_test.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+
+set_location_assignment PIN_D1 -to LED[4]
+set_location_assignment PIN_F3 -to LED[5]
+set_location_assignment PIN_B1 -to LED[6]
+set_location_assignment PIN_L3 -to LED[7]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
