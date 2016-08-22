@@ -8,6 +8,8 @@ reg [SIZE-1:0] max;
 
 wire [SIZE-1:0] led;
 
+vlog_tb_utils vlog_tb_utils0();
+
 initial 
 begin
   max = 4'b0111;

@@ -8,6 +8,8 @@ reg [SIZE-1:0] count;
 
 wire [SIZE-1:0] led;
 
+vlog_tb_utils vlog_tb_utils0();
+
 initial 
 begin
   rst = 0;

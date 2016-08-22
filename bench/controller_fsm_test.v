@@ -8,6 +8,8 @@ reg rst, start, clk;
 
 wire is_counting, sec_clk;
 
+vlog_tb_utils vlog_tb_utils0();
+
 initial 
 begin
   rst = 0;

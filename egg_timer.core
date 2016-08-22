@@ -1,0 +1,31 @@
+CAPI=1
+[main]
+description = "Simple egg timer example for de0 nano"
+simulators = icarus
+
+[verilog]
+src_files =
+ rtl/alarm_fsm.v
+ rtl/controller_fsm.v
+ rtl/led_driver.v
+ rtl/egg_timer.v
+ rtl/pll.v
+ rtl/toplevel.v
+
+tb_private_src_files =
+ bench/alarm_fsm_test.v
+ bench/controller_fsm_test.v
+ bench/egg_timer_test.v
+ bench/led_driver_test.v
+
+[icarus]
+depend = vlog_tb_utils-1.0
+
+[simulator]
+depend = vlog_tb_utils-1.0
+toplevel = alarm_fsm_test
+
+#[provider]
+#name = github
+#user = stffrdhrn
+#repo = egg_timer
